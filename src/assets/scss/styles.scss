@@ -1,0 +1,10 @@
+@import "./variables";
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,800,800i,900i&display=swap");
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/*LIBRARIES*/
+@import "bootstrap/scss/bootstrap";

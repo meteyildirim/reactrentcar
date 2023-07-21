@@ -1,0 +1,58 @@
+@use "../../../../assets/scss/variables" as v;
+@use "../../../../assets/scss/mixins" as m;
+
+.header {
+  @include m.flexbox($align-items: stretch); // yan yana getirmek icin flex
+  background-color: v.$color4;
+
+  .logo {
+    background-color: v.$color1;
+  }
+
+  .menus {
+    @include m.flexbox(column, center, stretch); // dikeyde flex yapmak icin
+    flex: 1; // kaplayabildigin kadar yer kapla, saga dogru genisletir
+    //border: 1px solid red; // sinirlari gormek icin kullanabilirsin
+    padding-left: 1rem;
+    padding: 1rem 1rem;
+    .topbar {
+      @include m.flexbox(row, space-between, center, 1rem);
+      flex: 1;
+      border-bottom: 1px dotted v.$color3;
+      font-size: 0.8rem;
+
+      ul {
+        @include m.flexbox($gap: 1rem);
+        //@include m.reset-list();
+        list-style: none;
+
+        a {
+          text-decoration: none;
+        }
+        &.contact-bar {
+          // & : parent element temsil eder
+          @include m.flexbox($gap: 1rem);
+
+          flex: 2;
+          a {
+            color: v.$color3;
+            @include m.flexbox($gap: 0.5rem, $align-items: center);
+          }
+        }
+        &.social-bar {
+          @include m.flexbox($justify-content: flex-end);
+          flex: 1;
+          font-size: 1.3rem;
+          gap: 0.5rem;
+        }
+      }
+    }
+    .menubar {
+      //border: 2px solid rgb(68, 0, 255); // sinirlari gormek icin kullanabilirsin
+      flex: 1;
+    }
+    /***
+    This is just comment
+    */
+  }
+}
